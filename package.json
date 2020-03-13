@@ -2,9 +2,9 @@
   "name": "travel-experts",
   "version": "1.0.0",
   "description": "Travel website by WinTech group",
-  "main": "express.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/isam007/Travel-Experts/issues"
   },
-  "homepage": "https://github.com/isam007/Travel-Experts#readme"
+  "homepage": "https://github.com/isam007/Travel-Experts#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.2"
+  }
 }
