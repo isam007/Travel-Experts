@@ -128,4 +128,14 @@
         font-size: large;
       }
 
-
+    /* Karim: Add Background Image (404 Page) */
+    #page-not-found header {
+      background-image: url(https://www.hover.com/blog/wp-content/uploads/2015/08/404-page-error.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      
+    /* Karim: Size Hero Section (full viewport) */
+    height: 100vh;
+    display: flex;
+    }
