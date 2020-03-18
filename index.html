@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- Original Front-End work performed by Anas and Colin -->
+<!-- Editing performed by Karim and Irada as needed - You will find our modifications annotated in this script) -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -11,17 +13,27 @@
 
 <body>
 
-  
+  <!-- Karim: Modified Nav Bar ordering -->
   <header>
+    <!-- <nav>
+      <img class="logo" src="https://fbcd.co/images/products/d35331b3a2008938bd53048159eaaa67_resize.png" alt="MY logo">
+      <ul class="navUl">        
+        <li class="navItem"><a href="/contact-us">Contact</a>  </li>
+        <li class="navItem"><a href="/register">Registration</a></li>
+        <li class="navItem"><a href="/home">Home</a></li>
+      </ul>
+    </nav> -->
+
+        <!-- Karim: Modified Nav Bar ordering -->
     <nav>
       <img class="logo" src="https://fbcd.co/images/products/d35331b3a2008938bd53048159eaaa67_resize.png" alt="MY logo">
-      <ul class="navUl">
-        <li class="navItem"><a href="/index">Main Page</a></li>
-        <li class="navItem"><a href="/contact-us">Contact</a>  </li>
-        <li class="navItem"><a href="/register">Registeration</a></li>
+      <ul>
+        <li><a href="/contact-us">Contact</a></li>
+        <li><a href="/register">Registration</a></li>
+        <li><a href="/holiday-packages">Holiday Packages</a></li>
+        <li><a href="/home">Home</a></li>
       </ul>
     </nav>
-    
   
     <h1 >Welcome to Travel Experts</h1>
     <br>
@@ -42,22 +54,29 @@
     <!-- Full-width images with number and caption text -->
     <div class="mySlides fade">
       <div class="numbertext">1 / 3</div>
-     <a href="https://www.google.com" target="_blank"> <img src="img1.jpg" style="width:100%"></a>
-      <div class="text">Caption Text</div>
-      <div class="locationText">Location</div>
+      <!-- Karim: Added Picture from Lake Louise and fixed link to right directory -->
+      <a href="https://www.banfflakelouise.com/" target="_blank"> 
+      <img src="../Travel-Experts/views/Banff_AB_Canada.jpg" style="width:100%"></a>
+      <div class="text">Canada</div>
+      <div class="locationText">Lake Louise, Banff, AB Canada</div>
       
     </div>
-  
+  <!-- Karim: Added Picture from China and fixed link to right directory -->
     <div class="mySlides fade">
       <div class="numbertext">2 / 3</div>
-      <img src="img2.jpg" style="width:100%">
-      <div class="text">Caption Two</div>
+      <a href="https://en.wikipedia.org/wiki/Great_Wall_of_China" target="_blank"> 
+      <img src="../Travel-Experts/views/The_Great_Wall_of_China.jpg" style="width:100%"></a>
+      <div class="text">China</div>
+      <div class="locationText">The Great Wall of China</div>
     </div>
-  
+  <!-- Karim: Added Picture from Jordan and fixed link to right directory -->
     <div class="mySlides fade">
       <div class="numbertext">3 / 3</div>
-      <img src="img3.jpg" style="width:100%">
-      <div class="text">Caption Three</div>
+      <a href="https://en.wikipedia.org/wiki/Petra" target="_blank"> 
+      <img src="../Travel-Experts/views/jordan petra.jpg" style="width:100%"></a>
+      <div class="text">Jordan</div>
+      <div class="locationText">Historical Beauty of Petra, Jordan</div>
+  
     </div>
   
     <!-- Next and previous buttons -->
@@ -74,9 +93,9 @@
   </div>
 
 </div>
-
+<!-- Modified Copyright in footer, changed from "My website" to 2020 Travel Experts All Rights Reserved -->
   <footer id="main-footer">
-    <p>Copyright &copy; 2020, My website</p>
+    <p>Copyright &copy; 2020 Travel Experts All Rights Reserved</p>
 </footer>
 
 
