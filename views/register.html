@@ -27,14 +27,14 @@
   </header>
 <!--Customer Registration Forms, currently under construction W bckground image, name & email set as required w placeholder as reminder & format example, method=post-->
     <div>
-      <form action="/action_page.php" target="" method="post">
+      <form action="/post_form" target="" method="post">
         <div class="addLabel">
-          <label>First Name</label><br>
+          <label>First Name*</label><br>
             <input type="text" name="CustFirstName" required placeholder="Required"><br>
-          <label>Last Name</label><br>
+          <label>Last Name*</label><br>
             <input type="text" name="CustLastName" required placeholder="Required"><br>
           <br>
-          <label>email</label><br>
+          <label>E-mail*</label><br>
             <input type="email" name="CustEmail" required placeholder="Required"><br>
           <br>
           <label>Street Address</label><br>
@@ -61,12 +61,13 @@
             <label>Country</label><br>
             <select name="CustCountry">
               <option value="CAN">Canada</option>
+              <option value="CAN">United States</option>
             </select>
           <br>
           <br>
           <label>Home Phone</label><br>
             <input type="tel" name="CustHomePhone"><br>
-          <label>Buisness Phone</label><br>
+          <label>Business Phone</label><br>
             <input type="tel" name="CustBusPhone"><br>
           <label>Agent ID </label>
             <input type = "text" name = "AgentId" placeholder="Enter your Agent ID" required>

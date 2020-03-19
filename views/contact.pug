@@ -1,0 +1,65 @@
+doctype html
+//Author Irada Shamilova
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    meta(name='description', content='Destinations Travel Experts')
+    meta(name='keywords', content='travel, adventure, lifestyle, expirience, local, culture')
+    link(rel='stylesheet', type='text/css', href='css/main.css')
+    link(rel='stylesheet', type='text/css', href='css/modifiedCSS.css')
+    title Destinations Travel Experts Registration Page
+    style.
+      img {
+        object-fit: cover;
+        margin: auto;
+        }
+
+      div {
+        margin-top: 5vh;
+      }
+  body
+    // header containing company logo img, company name, nav bar
+    header
+      .logo
+        img(src='pictures/teLogo.png', alt='company logo', height='150px')
+      nav.nav
+        ul
+          li
+            a(href='/contact') Contact
+          li
+            a(href='/packages') Packages
+          li
+            a(href='/index') Home
+
+
+  // bonus forms
+  form(action='/create_post' method='POST')
+    h3 Contact us
+    label First Name 
+    input(type='text' name='CustFirstName' required='' placeholder='Required')
+    br
+    br
+    label Last Name 
+    input(type='text' name='CustLastName' required='' placeholder='Required')
+    br
+    br
+    label Email 
+    input(type='email' name='CustEmail' required='' placeholder='Required')
+    br
+    br
+    label Message 
+    textarea(name='message')  
+    br
+    br
+    label  Date of Birth 
+    input(type='date' name='DateOfBirth')
+    br
+    br
+    div
+      input(type='submit' name='submit' value='Submit')
+    main
+      #{pugContacts}
+footer#main-footer
+  p Copyright &copy; 2020 Travel Experts All Rights Reserved
