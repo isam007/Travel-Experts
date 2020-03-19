@@ -1,5 +1,7 @@
+// import modules
+const express = require("express");
+const path = require("path");
 const mysql = require("mysql");
-const express = require("express");
 const bodyParser = require("body-parser");
 
 var data = [];
@@ -12,40 +14,92 @@ app.listen(8000, err=>{
 });
 
 // Express static pages - HTML/CSS/JS
-app.use(express.static("views"));
+// Load view engine
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+
+app.use(express.static("views", {
+  extensions: ["css", "png", "html"]
+}));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Call different pages - Home/Packages/Register/Contact/404
 //  Home Page
 app.get("/", (req, res)=>{
-	res.sendFile(__dirname + "/index.html");
-});
-
-// Packages Page
-app.get("/holiday-packages", (req, res)=>{
-	res.sendFile(__dirname + "/holiday_packages.html");
+	res.sendFile(index);
 });
 
 // Register Page
 app.get("/register", (req, res)=>{
-	res.sendFile(__dirname + "/register.html");
+	res.sendFile(register);
 });
 
 // Contact Page
-app.get("/contact-us", (req, res)=>{
-	res.sendFile(__dirname + "/contact.html");
+app.get("/contact", (req, res)=>{
+	res.sendFile(contact);
 });
 
-// 404 Page
-app.get("*", (req, res)=>{
-	res.sendFile(__dirname + "/404.html");
-});
+// // 404 Page
+// app.get("*", (req, res)=>{
+// 	res.sendFile(__dirname + "/404.html");
+// });
 
 // Thank you Page
 app.get("/thanks", (req, res)=>{
-	res.sendFile(__dirname + "/thanks.html");
+	res.sendFile(thanks);
 });
+
+// Packages Page
+app.get("/packages", (req, res)=>{
+	
+
+	// Populate packages (Author: Irada Shamilova)
+	var conn = mysql.createConnection({
+  host: "localhost",
+  user: "Wintech",
+  password: "password",
+  database: "travelexpertsWT"
+	});
+
+	conn.connect((err)=>{
+		if (err) throw err;
+		var sql = "SELECT * FROM packages";
+		//const packagesDb = '';
+		conn.query(sql, (err, packagesDb, fields)=>{
+		//	if (err) throw err;
+			// console.log(packagesDb);
+
+			let content = '';
+
+			// Loop through each element in the packages and append to content
+			// Note: I've attached url link to the image rather than as a separate link
+			packagesDb.forEach(function(package){
+				let imgUrl = "/pictures/" + package.PkgImage + ".jpg";
+				let startDate = package.PkgStartDate.getFullYear() + "/" + (package.PkgStartDate.getMonth() + 1) + "/" + package.PkgStartDate.getDate();
+				let endDate = package.PkgEndDate.getFullYear() + "/" + (package.PkgEndDate.getMonth() + 1) + "/" + package.PkgEndDate.getDate();
+				
+				console.log(startDate)
+
+				content +=  `div style = "display: none"><div>
+										<h2 class="center header-blue"> ${package.PkgName} </h2>
+										<p class="packages center">Dates: ${startDate} to ${endDate}</p>
+										<p class="packages center">Price: $${package.PkgBasePrice} </p>
+										<img class="package-img shadow2" src= ${imgUrl} alt="Destination: ${package.PkgName}" width=200 height=200></div></div`	
+			});
+			  
+				// console.log(content);
+				res.render('packages', { pugPackages : content });
+				
+				conn.end((err)=>{
+				if (err) throw err;
+			});
+		});
+	});
+	
+	
+});
+
 
 // Registration Form
 app.post("/post_form", (req, res)=>{
@@ -65,7 +119,7 @@ app.post("/post_form", (req, res)=>{
 		host: "localhost",
 		user: "Wintech",
 		password: "password",
-		database: "travelexperts"
+		database: "travelexpertsWT"
 	});
 
 	conn.connect((err)=>{
@@ -87,12 +141,12 @@ app.post("/post_form", (req, res)=>{
 	res.redirect("/thanks");
 	
 //  Holiday Packages population
-	app.get("/holiday-packages", (req, res)=>{
+	app.get("/packages", (req, res)=>{
 		var conn = mysql.createConnection({
 			host: "localhost",
 			user: "Wintech",
 			password: "password",
-			database: "travelexperts"
+			database: "travelexpertsWT"
 		})
 		
 		conn.connect((err) => {

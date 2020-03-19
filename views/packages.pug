@@ -1,0 +1,44 @@
+doctype html
+//Author Irada Shamilova
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    meta(name='description', content='Destinations Travel Experts')
+    meta(name='keywords', content='travel, adventure, lifestyle, expirience, local, culture')
+    link(rel='stylesheet', type='text/css', href='css/main.css')
+    link(rel='stylesheet', type='text/css', href='css/modifiedCSS.css')
+    title Destinations Travel Experts Registration Page
+    style.
+      img {
+        object-fit: cover;
+        margin: auto;
+        }
+
+      div {
+        margin-top: 5vh;
+      }
+  body
+    // header containing company logo img, company name, nav bar
+    header
+      .logo
+        img(src='pictures/teLogo.png', alt='company logo', height='150px')
+      nav.nav
+        ul
+          li
+            a(href='/contact') Contact
+          li
+            a(href='/packages') Packages
+          li
+            a(href='/index') Home
+    // Customer Registration Forms, currently under construction W bckground image, name & email set as required w placeholder as reminder & format example, method=post
+
+    main
+      #{pugPackages}
+
+    footer#main-footer
+      h3 Copyright © 2020, Travel Experts All Rights Reserved
+
+
+  
