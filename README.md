@@ -14,11 +14,13 @@ http://www.thesuburban.com/news/laval_news/get-lost-in-the-historical-beauty-of-
 
 ## Designed 404 Page 
 
-## Created back-end script for Order Post form
+## Created Back-end script for Order Post form to post data from the form in the browser to MySQL DB.
 
-## Created back-end script for Contact form
+## Created Back-end script for Contact form to post data from the form in the browser to MySQL DB.
 
-## Created back-end script to dynamically generate Agents and Agencies contact info from MySQL DB onto Contact Page.
+## Created Back-end script to dynamically generate Agents and Agencies contact info from MySQL DB onto Contact Page.
+
+## Converted Contact Page to HTML to PUG for dynamic generation of data from MySQL DB.
 
 
 # March 13 Irada Shamilova
