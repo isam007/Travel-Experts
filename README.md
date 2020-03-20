@@ -22,6 +22,8 @@ http://www.thesuburban.com/news/laval_news/get-lost-in-the-historical-beauty-of-
 
 ## Converted Contact Page from HTML to PUG for dynamic generation of data from MySQL DB.
 
+## Created Additional Feature: Display Weather Information on the Index Page.
+
 
 # March 13 Irada Shamilova
   ## added package.json and dependancies
