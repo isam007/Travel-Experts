@@ -20,7 +20,7 @@ http://www.thesuburban.com/news/laval_news/get-lost-in-the-historical-beauty-of-
 
 ## Created Back-end script to dynamically generate Agents and Agencies contact info from MySQL DB onto Contact Page.
 
-## Converted Contact Page to HTML to PUG for dynamic generation of data from MySQL DB.
+## Converted Contact Page from HTML to PUG for dynamic generation of data from MySQL DB.
 
 
 # March 13 Irada Shamilova
