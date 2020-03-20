@@ -35,5 +35,13 @@ http://www.thesuburban.com/news/laval_news/get-lost-in-the-historical-beauty-of-
   ## added code to format dates on packages
   ## added html and css extensions and fixed the app.js file to shorten the code
 
+# Mar. 17-19 Colin MacDonald
+  ## Generation and submission of daily scrum reports
+  ## Added rough template (html/css) for Registration/Order page and package gallery page (html css)
+  ## Scrum master(?), reporting
 
+# Mar.13-19 Anas Atieh
+  ## Created the intial index (including dynamic slider script)
+  ## Created initial registration, contact pages 
+  ## Touchup style format work on all final pages
 
