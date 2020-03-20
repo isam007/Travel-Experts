@@ -24,6 +24,7 @@ http://www.thesuburban.com/news/laval_news/get-lost-in-the-historical-beauty-of-
   ## added images to packages
   ## added code to format dates on packages
   ## added html and css extensions and fixed the app.js file to shorten the code
+  ## changed most of the hard coded px sizes to view related, to add greater responsiveness. 
 
 
 

@@ -85,7 +85,9 @@ app.get("/packages", (req, res)=>{
 										<h2 class="center header-blue"> ${package.PkgName} </h2>
 										<p class="packages center">Dates: ${startDate} to ${endDate}</p>
 										<p class="packages center">Price: $${package.PkgBasePrice} </p>
-										<img class="package-img shadow2" src= ${imgUrl} alt="Destination: ${package.PkgName}" width=200 height=200></div></div`	
+										<img class="package-img shadow2" src= ${imgUrl} alt="Destination: ${package.PkgName}" width=200 height=200>
+										<button type="button" class="center order-button">Click Me!</button> 
+										</div></div`	
 			});
 			  
 				// console.log(content);
@@ -141,7 +143,7 @@ app.post("/post_form", (req, res)=>{
 	res.redirect("/thanks");
 	
 //  Holiday Packages population
-	app.get("/packages", (req, res)=>{
+/*	app.get("/packages", (req, res)=>{
 		var conn = mysql.createConnection({
 			host: "localhost",
 			user: "Wintech",
@@ -184,5 +186,5 @@ app.post("/post_form", (req, res)=>{
 				})
 			})
 		})
-	})
+	}) */
 });
