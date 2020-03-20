@@ -42,5 +42,13 @@ http://www.thesuburban.com/news/laval_news/get-lost-in-the-historical-beauty-of-
   ## added button to the packages for order registration
   ## unified the navbar style and added responsiveness to it
 
+# Mar. 17-19 Colin MacDonald
+  ## Generation and submission of daily scrum reports
+  ## Added rough template (html/css) for Registration/Order page and package gallery page (html css)
+  ## Scrum master(?), reporting
 
+# Mar.13-19 Anas Atieh
+  ## Created the intial index (including dynamic slider script)
+  ## Created initial registration, contact pages 
+  ## Touchup style format work on all final pages
 
