@@ -28,26 +28,27 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Call different pages - Home/Packages/Register/Contact/404
 //  Home Page
+
+// Additional feature: Weather API
+// Authors: Karim and Irada
 app.get("/", (req, res)=> {
 	let apiKey = '3c660fb6936a88cfaa17a0bc2e018f43';
 	let city = argv.c || 'calgary';
 	let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
 
-	// app.get("/packages", (req, res)=>{
-
 	request(url, function (err, response, body) {
-	if(err){
-		console.log('error:', error);
-	} else {
-		let weather = JSON.parse(body)
-		var message = `It's ${weather.main.temp} degrees in ${weather.name}!`;
-		console.log(message);
-	}
-	response.render('/', { pugIndex : message });
-	// });
-	});
-	
-	
+		if(err){
+			console.log('error:', err);
+		} else {
+			let weather = JSON.parse(body)
+			var message = `It's ${Math.round((weather.main.temp - 32)*5/9,2)}°C in ${weather.name}!`;
+			console.log(message);
+			
+		}
+		res.render('index', { pugIndex : message });
+		
+		// });
+	});	
 });
 
 // Register Page
