@@ -40,11 +40,6 @@ app.get("/contact", (req, res)=>{
 	res.sendFile(contact);
 });
 
-// // 404 Page
-// app.get("*", (req, res)=>{
-// 	res.sendFile(__dirname + "/404.html");
-// });
-
 // Thank you Page
 app.get("/thanks", (req, res)=>{
 	res.sendFile(thanks);
@@ -54,7 +49,7 @@ app.get("/thanks", (req, res)=>{
 app.get("/packages", (req, res)=>{
 	
 
-	// Populate packages (Author: Irada Shamilova)
+// Populate packages (Author: Irada Shamilova)
 	var conn = mysql.createConnection({
   host: "localhost",
   user: "Wintech",
@@ -102,17 +97,70 @@ app.get("/packages", (req, res)=>{
 	
 });
 
+// Contact Page population (Author: Karim Khan)
+app.get("/contact", (req, res)=>{
+    var conn = mysql.createConnection({
+        host: "localhost",
+        user: "Wintech",
+        password: "password",
+        database: "travelexpertsWT"
+    });
+    
+    conn.connect((err) => {
+        if (err) throw err;
+        var sql = "SELECT agencies.AgncyAddress, agencies.AgncyPhone, agents.AgtFirstName," 
+            + "agents.AgtLastName, agents.AgtBusPhone, agents.AgtEmail, agents.AgtPosition" 
+            + " FROM agencies JOIN agents ON agencies.AgencyId = agents.AgencyId"
+			+ " ORDER by agencies.AgncyAddress";
+			
+        conn.query(sql, (err, result, fields) => {
+            if (err) throw err;
+            res.writeHead(200, {"Content-Type":"text/html"})
+            fs.readFile("contact.html", (err, data) => {
+                if (err) throw err;
+                res.render(data) 
+             // <table> tag --> <tr> create rows --> <td> create columns
+            res.render("<table border='1'>")
+            res.render("<tr>")
+            for (column of fields)
+            {
+                res.render("<th>" + column.name + "</th>"); 
+            }
+            res.render("</tr>")
+            for (agency of result)
+            {
+                res.render("<tr>")
+                var values = Object.values(agency);
+                for (i=0; i < values.length; i++)
+                {
+                    res.render("<td>" + values[i] + "</td>")
+                }
+                res.render("</tr>")
+            }
+            
+			res.render('contact', { pugContacts });
 
-// Registration Form
+            conn.end((err)=>{
+			if (err) throw err;
+		});
+            
+            });
+        });
+        
+    });
+});
+
+
+// Order Form (Author: Karim Khan)
 app.post("/post_form", (req, res)=>{
-	console.log(req.body	);
+	console.log(req.body);
 	data[0] = req.body.CustFirstName;
 	data[1] = req.body.CustLastName;
 	data[2] = req.body.CustAddress;
 	data[3] = req.body.CustCity;
 	data[4] = req.body.CustProv;
 	data[5] = req.body.CustPostal;
-	data[6] = req.body.CustCountry;
+	data[6] = req.body.CustCountry;	
 	data[7] = req.body.CustHomePhone;
 	data[8] = req.body.CustBusPhone;
 	data[9] = req.body.CustEmail;
@@ -141,50 +189,41 @@ app.post("/post_form", (req, res)=>{
 		});
 	});	
 	res.redirect("/thanks");
-	
-//  Holiday Packages population
-/*	app.get("/packages", (req, res)=>{
-		var conn = mysql.createConnection({
-			host: "localhost",
-			user: "Wintech",
-			password: "password",
-			database: "travelexpertsWT"
-		})
+});	
+
+// Contact Form (Author: Karim Khan)
+app.post("/create_post", (req, res)=>{
+	console.log(req.body);
+	data[0] = req.body.CustFirstName;
+	data[1] = req.body.CustLastName;
+	data[2] = req.body.CustEmail;
+
+	var conn = mysql.createConnection({
+		host: "localhost",
+		user: "Wintech",
+		password: "password",
+		database: "travelexpertsWT"
+	});
+
+	conn.connect((err)=>{
+		if (err) throw err;
 		
-		conn.connect((err) => {
+		var sql = "INSERT INTO `customers`(`CustFirstName`, `CustLastName`,"
+			+ " `CustEmail`)"
+			+ "VALUES (?,?,?)";
+		conn.query(sql, data, (err, result, fields)=>{
 			if (err) throw err;
-			var sql = "SELECT * from `packages`";
-			conn.query(sql, (err, result, fields) => {
+			console.log(result);
+			console.log("Customer data received successfully.")
+			conn.end((err)=>{
 				if (err) throw err;
-				res.writeHead(200, {"Content-Type":"text/html"})
-				fs.readFile(__dirname + "/holiday_packages.html", (err, data) => {
-					if (err) throw err;
-					res.write(data)
-				
-				// <table> tag --> <tr> create rows --> <td> create columns
-				res.write("<table border='1'>")
-				res.write("<tr>")
-				for (column of fields)
-				{
-					res.write("<th>" + column.name + "</th>"); 
-				}
-				res.write("</tr>")
-				for (pkg of result)
-				{
-					res.write("<tr>")
-					var values = Object.values(pkg);
-					for (i=0; i < values.length; i++)
-					{
-						res.write("<td>" + values[i] + "</td>") 
-					}
-					res.write("</tr>")
-				}
-				res.write("</body></html>");
-	
-				res.end();
-				
-				})
-			})
-		})
-	}) */
-});
+			});
+		});
+	});	
+	res.redirect("/thanks");
+});	
+
+// 404 Page (Karim: Needs troublshooting!)
+// app.get("*", (req, res)=>{
+// 	res.sendFile(pagenotfound);
+// });
