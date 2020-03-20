@@ -8,30 +8,28 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:300,400" rel="stylesheet">
   <title>index</title>
   <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/modifiedCSS.css">
   <!-- <script src="test.js"></script> -->
+  <style>
+    header {
+      height: 100vh;
+      background-size: contain;
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- Karim: Modified Nav Bar ordering -->
+  <!-- Karim/Irada: Modified Nav Bar ordering -->
   <header>
-    <!-- <nav>
-      <img class="logo" src="/pictures/teLogo.png" alt="MY logo">
-      <ul class="navUl">        
-        <li class="navItem"><a href="/contact-us">Contact</a>  </li>
-        <li class="navItem"><a href="/register">Registration</a></li>
-        <li class="navItem"><a href="/home">Home</a></li>
-      </ul>
-    </nav> -->
-
-        <!-- Karim: Modified Nav Bar ordering -->
     <nav>
       <img class="logo" src="pictures/teLogo.png" alt="MY logo" >
       <ul>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/register">Registration</a></li>
-        <li><a href="/packages">Packages</a></li>
-        <li><a href="/">Home</a></li>
+        <li><a class = "text-shadow" href="/">Home</a></li>
+        <li><a class = "text-shadow" href="/packages">Packages</a></li>
+        <li><a class = "text-shadow" href="/contact">Contact</a></li>
       </ul>
     </nav>
     
@@ -39,9 +37,9 @@
       <h1>Welcome to Travel Experts</h1>
       <br>
       <h2>“Travelling's not something you're good at,
-      <br> It's something you do, Like breathing. 
+      <br> It's something you do, like breathing. 
       <br>You can't work too much at it, or it feels like work.”</h2>
-      <h4>By Gayle Forman</h4>
+      <h6>By Gayle Forman</h6>
     </div>
   </header>
   <h1>Great Travel Locations</h1>
@@ -98,8 +96,9 @@
 
 </main>
 
-<footer id="main-footer">
-    <p>Copyright &copy; 2020 Travel Experts All Rights Reserved</p>
+<!-- Irada: unified footer style with Colin's pages -->
+<footer>
+    <p class="ivory">Copyright &copy; 2020 Travel Experts All Rights Reserved</p>
 </footer>
 
 
@@ -107,74 +106,35 @@
 
 </body>
   <script>
-   /* const trvaelLocations = [
-      {
-        name:     'Jordan',
-        location: 'Jordan',
-        imgURL: 'jordan petra.jpg',
-        extURL: 'https://en.wikipedia.org/wiki/Jordan'
-      },
-      {
-        name:     'China',
-        location: 'China',
-        imgURL: 'china.jpg',
-        extURL: 'https://en.wikipedia.org/wiki/China'
-      },
-      {
-        name:     'Canada',
-        location: 'Canada',
-        imgURL: 'canada.jpg',
-        extURL: 'https://simple.wikipedia.org/wiki/Canada'
-      },
-      {
-        name:     'USA',
-        location: 'USA',
-        imgURL: 'USA.jpg',
-        extURL: 'https://en.wikipedia.org/wiki/United_States'
-      }
-    ]
-
-    let content = '';
-    trvaelLocations.forEach(function(trvaelLocations){
-
-      content +=  `<article>
-                    <p>location: ${trvaelLocations.location}</p>
-                    <a href="${trvaelLocations.extURL}" target="_blank"><img width="300" height="220" src="${trvaelLocations.imgURL}" alt="Cutness Attack: ${trvaelLocations.name}"></a>
-                  </article>`;
-    });
-
-    const main = document.querySelector('main');
-    main.innerHTML = content;
-*/
-
+    //Irada: fixed the indention
     var slideIndex = 1;
-showSlides(slideIndex);
+    showSlides(slideIndex);
 
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+    // Next/previous controls
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
 
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+    // Thumbnail image controls
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
 
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-}
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+    }
 
 
   </script>

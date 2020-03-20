@@ -1,8 +1,7 @@
 
-/* * {
+* {
   box-sizing: border-box;
-} */
-
+}
 body {
   margin: 0;
 }
@@ -19,6 +18,7 @@ body {
 /* Size hero section (full viewport) */
 header {   
   height: 100vh;
+  margin-bottom: 10px;
   /* width: 90vw; */
 }
 
@@ -38,36 +38,40 @@ header {
 
 /* Style heading */
 h1 {
-  font-size: 4em;
+  font-size: 3.5vw;
   text-align: center;
   margin: auto;
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 2vw;
   text-align: center;
   margin: auto;
 }
 h3 {
-  font-size: 1em;
+  font-size: 1vw;
   text-align: center;
   margin: auto;
 }
 h4 {
-  font-size: 20px;
+  font-size: 1vw;
   text-align: right;
-  margin: 2vw;
+  margin-right: 2vw;
 }
 h5 {
   font-size: 15px;
   text-align: center;
   margin: auto;
 }
-
+h6 {
+  font-size: 1vw;
+  text-align: right;
+  margin-right: 30em;
+}
 /* Make it pretty */
 main {
-  /* width: 80vw; */
-  max-width: 85ch;
+  width: 80vw;
+  /* max-width: 85ch; */
   line-height: 1.5;
 
   margin: auto;
@@ -76,8 +80,23 @@ main {
 #main-footer{
   text-align: center;
   font-size: 18px;
+  margin-top: 10em;
 }
 
+footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100vp;
+  height: 5%;
+  margin: 0;
+  color: ivory;
+  background-color: #69779b;
+
+}
+.ivory {
+  color: ivory
+}
 nav{
   padding: 5px;
   margin-right: 2 vw;
@@ -85,7 +104,7 @@ nav{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
+  flex-wrap: wrap;
 
 }
 main {
@@ -96,14 +115,14 @@ main {
 
 
 
-ul{
-/* width:25vw; */
-display: flex;
-flex-direction: row-reverse;
-justify-content: space-around;
-list-style: none;
-  
-}
+ ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding-right: 5em;
+  padding-top: 0em;
+  /* margin: auto; */
+  }
 
 
 ol{
@@ -112,14 +131,7 @@ ol{
   justify-content: center;
 }
 
-a{
-color:black;
-font-size: x-large;
-font-weight: bold;
-text-decoration: none;
-padding: 7px;
-margin: auto;
-}
+
 
 form{
   padding: 20px;
@@ -136,14 +148,14 @@ p{
 
 /* Karim: Add Background Image (404 Page) */
 #page-not-found header {
-background-image: url(https://www.hover.com/blog/wp-content/uploads/2015/08/404-page-error.png);
-background-repeat: no-repeat;
-background-size: cover;
-background-position: center;
+  background-image: url(https://www.hover.com/blog/wp-content/uploads/2015/08/404-page-error.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 
-/* Karim: Size Hero Section (full viewport) */
-height: 100vh;
-display: flex;
+  /* Karim: Size Hero Section (full viewport) */
+  height: 100vh;
+  display: flex;
 }
 
 
@@ -267,6 +279,7 @@ display: flex;
   width: 10vw;
   min-width: 150px;
   height: auto;
+  margin-left: 20px;
 }
 
 .navItem{
@@ -285,7 +298,7 @@ display: flex;
 
 .package-img {
   display: block;
-  width: 100%;
+  width: 200px;
   margin: 5px;
   object-fit: cover;
 }
@@ -298,8 +311,69 @@ display: flex;
   box-shadow: -1px 0px 0px rgba(0,0,0,0.06);
 }
 
-.order-button{
+.order-button {
   margin: auto;
 
+}
+
+p {
+  padding: 5px;
+}
+.order-button {
+  border-bottom: 2px solid rgb(67, 104, 146);
+  border-left: 2px solid rgb(67, 104, 146);
+  border-top: 2px solid lightblue;
+  border-right: 2px solid lightblue;
+  box-shadow: -1px 0px 0px rgba(0,0,0,0.06);
+  border-radius: 8px;
+  height:2.5em;
+  background-color: rgb(85, 135, 182);
+  color: white;
+  cursor: pointer;
+}
+
+a {
+  display: flex;
+  flex-direction: column;
+  color:black;
+  font-size: 3em;
+  /* font-weight: bold; */
+  text-decoration: none;
+  padding: 7px;
+  margin: auto;
+  font-family: 'Zhi Mang Xing';
+  text-decoration: none;
+  color: rgb(180, 172, 159);
+}
+
+li {
+  flex: auto;
+  border: none;
+  text-align: center;
+}
+
+
+a:hover {
+  color: rgb(12, 68, 114);
+  }
+
+ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding-right: 5em;
+  padding-top: 0em;
+  /* margin: auto; */
+  }
+/* nav {
+  width: 100vw;
+} */
+
+.text-shadow {
+  text-shadow:
+    -1px -1px 0 black,  
+      1px -1px 0 black,
+    -1px 1px 0 black,
+      1px 1px 0 black;
 }
 

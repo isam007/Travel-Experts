@@ -13,18 +13,16 @@
 
 <body>
 <!--header containing company logo img, company name, nav bar-->
-  <header>
-    <div class="logo">
-      <img src="pictures/teLogo.png" alt="company logo" height="150px">
-    </div>
-    <nav class="nav">
-      <ul>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/packages">Packages</a></li>
-        <li><a href="/index">Home</a></li>
-      </ul>
-    </nav>  
-  </header>
+<header>
+  <nav>
+    <img class="logo" src="pictures/teLogo.png" alt="MY logo" >
+    <ul>
+      <li><a class = "text-shadow" href="/">Home</a></li>
+      <li><a class = "text-shadow" href="/packages">Packages</a></li>
+      <li><a class = "text-shadow" href="/contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 <!--Customer Registration Forms, currently under construction W bckground image, name & email set as required w placeholder as reminder & format example, method=post-->
     <div>
       <form action="/post_form" target="" method="post">
@@ -42,7 +40,7 @@
           <label>City</label><br>
             <input type="text" name="CustCity"><br>
           <label>Postal Code</label><br>
-            <input type="text" name="CustPostal" pattern="^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$" placeholder="X1X-1X1" pattern=""><br>
+            <input type="text" name="CustPostal" pattern="^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$" placeholder="X1X-1X1"><br>
           <label>Province</label><br>
             <select name="CustProv">
               <option value="BC">BC</option>
@@ -90,7 +88,7 @@
               <textarea name="message"></textarea>
           <br>
           <br>
-            <input type="Submit" name="Submit" value="Submit">
+            <input class="order-button" type="Submit" name="Submit" value="Submit">
           <br>
         </div>
       </form>

@@ -1,10 +1,8 @@
-/**authors Anas **/
+/**authors Colin **/
 /**global fonts, google fonts import**/
    @import url("https://fonts.googleapis.com/css?family=Libre+Baskerville|Merriweather|Zhi+Mang+Xing&display=swap");
 /* Reset */
-* {
-  box-sizing: border-box;
-}
+
 
 body {
   margin: 0;
@@ -49,7 +47,7 @@ body {
 /**header layout, w logo and nav tabs as flexbox elements, positioned with some manual rejig**/
 header {
   position: relative;
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
   width: 100vw;
   height: 15%;
@@ -71,30 +69,8 @@ footer {
 
 }
 /** media query applied to the nav bar text to adjust font with smaller screen**/
-ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  padding-right: 5em;
-  padding-top: 0em;
-  margin: auto;
-  }
-li {
-  flex: auto;
-  border: none;
-  text-align: center;
-}
-a {
-  display: block;
-  padding: .5em;
-  /* font-family: 'Zhi Mang Xing', cursive; */
-  /* font-sizse: 30px; */
-  text-decoration: none;
-  color: rgb(42, 40, 43);
-  }
-a:hover {
-  color: rgb(70, 45, 6);
-  }
+
+
   @media only screen and (max-width: 620px) {.nav a {font-size: 20px;}}
 
 /** gallery page with main page styling and bk image, set up as flex box wrap row for the gallery images & css hyper linked to relevant pages**/

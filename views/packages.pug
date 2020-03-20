@@ -19,26 +19,47 @@ html(lang='en')
       div {
         margin-top: 5vh;
       }
+
+      .red {
+        color: red;
+        font-weight: bolder;
+      }
+
+      .inline {
+        display: inline;
+        margin: auto;
+        padding: 5px;
+      }
+
+      .flex-col {
+        display: flex; 
+        flex-direction: column;
+      }
+
+      main {
+        width: 80vw
+      }
+
+      
   body
     // header containing company logo img, company name, nav bar
     header
-      .logo
-        img(src='pictures/teLogo.png', alt='company logo', height='150px')
-      nav.nav
+      nav
+        img.logo(src='pictures/teLogo.png', alt='MY logo')
         ul
           li
-            a(href='/contact') Contact
+            a.text-shadow(href='/') Home
           li
-            a(href='/packages') Packages
+            a.text-shadow(href='/packages') Packages
           li
-            a(href='/index') Home
+            a.text-shadow(href='/contact') Contact
     // Customer Registration Forms, currently under construction W bckground image, name & email set as required w placeholder as reminder & format example, method=post
 
     main
       #{pugPackages}
 
     footer#main-footer
-      h3 Copyright © 2020, Travel Experts All Rights Reserved
+      p.ivory Copyright © 2020, Travel Experts All Rights Reserved
 
 
   

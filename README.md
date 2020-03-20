@@ -37,6 +37,10 @@ http://www.thesuburban.com/news/laval_news/get-lost-in-the-historical-beauty-of-
   ## added code to format dates on packages
   ## added html and css extensions and fixed the app.js file to shorten the code
   ## changed most of the hard coded px sizes to view related, to add greater responsiveness. 
+  ## added new node js code that dynamically displays agents in the contact list
+  ## added date check, if start date is in the past, it will add new css style - red & bold - to that date
+  ## added button to the packages for order registration
+  ## unified the navbar style and added responsiveness to it
 
 
 

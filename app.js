@@ -36,9 +36,9 @@ app.get("/register", (req, res)=>{
 });
 
 // Contact Page
-app.get("/contact", (req, res)=>{
-	res.sendFile(contact);
-});
+// app.get("/contact", (req, res)=>{
+// 	res.sendFile(contact);
+// });
 
 // Thank you Page
 app.get("/thanks", (req, res)=>{
@@ -73,18 +73,26 @@ app.get("/packages", (req, res)=>{
 				let imgUrl = "/pictures/" + package.PkgImage + ".jpg";
 				let startDate = package.PkgStartDate.getFullYear() + "/" + (package.PkgStartDate.getMonth() + 1) + "/" + package.PkgStartDate.getDate();
 				let endDate = package.PkgEndDate.getFullYear() + "/" + (package.PkgEndDate.getMonth() + 1) + "/" + package.PkgEndDate.getDate();
-				
-				console.log(startDate)
 
-				content +=  `div style = "display: none"><div>
-										<h2 class="center header-blue"> ${package.PkgName} </h2>
-										<p class="packages center">Dates: ${startDate} to ${endDate}</p>
-										<p class="packages center">Price: $${package.PkgBasePrice} </p>
-										<img class="package-img shadow2" src= ${imgUrl} alt="Destination: ${package.PkgName}" width=200 height=200>
-										<button type="button" class="center order-button">Click Me!</button> 
-										</div></div`	
+				if (package.PkgEndDate > new Date()) {
+					let past = "" 
+					if (package.PkgStartDate < new Date()) {
+						past = "red"
+					}
+				
+					//console.log(startDate)
+
+					content +=  `div style = "display: none"><div class= "flex-col">
+											<h2 class="center header-blue"> ${package.PkgName} </h2>
+											<div class="inline"><span class="packages center ${past}">Dates: ${startDate} </span> <span class="packages center"> to ${endDate}</span></div>
+											<p class="packages center">Price: $${package.PkgBasePrice} </p>
+											<a href = "/register.html"><img class="package-img shadow2" src= ${imgUrl} alt="Destination: ${package.PkgName}" width="200px" height="200px></a>
+											<a href = "/register.html"><button type="button" class="center-button order-button">Book Me!</button> </a>
+											</div></div`
+				}	
 			});
-			  
+			
+	
 				// console.log(content);
 				res.render('packages', { pugPackages : content });
 				
@@ -96,6 +104,52 @@ app.get("/packages", (req, res)=>{
 	
 	
 });
+
+// Packages Page
+app.get("/contact", (req, res)=>{
+	
+
+	// Populate packages (Author: Irada Shamilova)
+		var conn = mysql.createConnection({
+		host: "localhost",
+		user: "Wintech",
+		password: "password",
+		database: "travelexpertsWT"
+		});
+	
+		conn.connect((err)=>{
+			if (err) throw err;
+			var sql = "SELECT * FROM agents";
+			//const packagesDb = '';
+			conn.query(sql, (err, agentsDb, fields)=>{
+			//	if (err) throw err;
+				// console.log(packagesDb);
+	
+				let contentAgents = '';
+	
+				// Loop through each element in the packages and append to content
+				// Note: I've attached url link to the image rather than as a separate link
+				agentsDb.forEach(function(agent){
+					
+					
+					contentAgents +=  `div style = "display: none"><div>
+											<h2 class="center header-blue"> ${agent.AgtFirstName} ${agent.AgtLastName} </h2>
+											<p class="packages center">Email: ${agent.AgtEmail}</p>
+											<p class="packages center">Phone: ${agent.AgtBusPhone} </p>
+											</div></div`	
+				});
+					
+					console.log(contentAgents);
+					res.render('contact', { pugContacts : contentAgents });
+					
+					conn.end((err)=>{
+					if (err) throw err;
+				});
+			});
+		});
+		
+		
+	});
 
 // Contact Page population (Author: Karim Khan)
 app.get("/contact", (req, res)=>{
@@ -112,6 +166,8 @@ app.get("/contact", (req, res)=>{
             + "agents.AgtLastName, agents.AgtBusPhone, agents.AgtEmail, agents.AgtPosition" 
             + " FROM agencies JOIN agents ON agencies.AgencyId = agents.AgencyId"
 			+ " ORDER by agencies.AgncyAddress";
+				
+				console.log(sql)
 			
         conn.query(sql, (err, result, fields) => {
             if (err) throw err;
@@ -227,3 +283,9 @@ app.post("/create_post", (req, res)=>{
 // app.get("*", (req, res)=>{
 // 	res.sendFile(pagenotfound);
 // });
+
+// Irada's route to error page if page not found
+app.use((req,res,next)=>{
+  res.status(404);
+  res.sendFile(__dirname + "/views/pagenotfound.html")
+});
