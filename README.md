@@ -22,6 +22,8 @@ http://www.thesuburban.com/news/laval_news/get-lost-in-the-historical-beauty-of-
 
 ## Converted Contact Page from HTML to PUG for dynamic generation of data from MySQL DB.
 
+## Created Additional Feature: Display Weather Information on the Index Page.
+
 
 # March 13 Irada Shamilova
   ## added package.json and dependancies
@@ -41,6 +43,7 @@ http://www.thesuburban.com/news/laval_news/get-lost-in-the-historical-beauty-of-
   ## added date check, if start date is in the past, it will add new css style - red & bold - to that date
   ## added button to the packages for order registration
   ## unified the navbar style and added responsiveness to it
+  ## fixed weather API
 
 # Mar. 17-19 Colin MacDonald
   ## Generation and submission of daily scrum reports

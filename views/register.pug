@@ -1,4 +1,5 @@
 doctype html
+//Author Anas Atieh/Colin MacDonald/Irada Shamilova
 html(lang='en')
   head
     meta(charset='UTF-8')
@@ -21,7 +22,7 @@ html(lang='en')
             a(href='/packages') Packages
           li
             a(href='/') Home
-    // Customer Registration Forms, currently under construction W bckground image, name & email set as required w placeholder as reminder & format example, method=post
+
     div
       #{packageInfo}
       form(action='/post_form', target='', method='post')
@@ -107,6 +108,5 @@ html(lang='en')
           input.order-button(type='Submit', name='Submit', value='Submit')
           br
     // footer with copyright
-    // Karim: Modified Copyright in footer, changed from "My website" to 2020 Travel Experts All Rights Reserved
     footer#main-footer
       h3 Copyright © 2020, Travel Experts All Rights Reserved

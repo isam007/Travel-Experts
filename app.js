@@ -1,8 +1,10 @@
-// import modules
+// Import modules
 const express = require("express");
 const path = require("path");
 const mysql = require("mysql");
 const bodyParser = require("body-parser");
+const request = require('request');
+const argv = require('yargs').argv;
 
 var data = [];
 const app = express();
@@ -26,8 +28,27 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Call different pages - Home/Packages/Register/Contact/404
 //  Home Page
-app.get("/", (req, res)=>{
-	res.sendFile(index);
+
+// Additional feature: Weather API
+// Authors: Karim and Irada
+app.get("/", (req, res)=> {
+	let apiKey = '3c660fb6936a88cfaa17a0bc2e018f43';
+	let city = argv.c || 'calgary';
+	let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
+
+	request(url, function (err, response, body) {
+		if(err){
+			console.log('error:', err);
+		} else {
+			let weather = JSON.parse(body)
+			var message = `It's ${Math.round((weather.main.temp - 32)*5/9,2)}°C in ${weather.name}!`;
+			console.log(message);
+			
+		}
+		res.render('index', { pugIndex : message });
+		
+		// });
+	});	
 });
 
 // Register Page
@@ -35,10 +56,6 @@ app.get("/register", (req, res)=>{
 	res.sendFile(register);
 });
 
-// Contact Page
-// app.get("/contact", (req, res)=>{
-// 	res.sendFile(contact);
-// });
 
 // Thank you Page
 app.get("/thanks", (req, res)=>{
@@ -105,11 +122,11 @@ app.get("/packages", (req, res)=>{
 	
 });
 
-// Packages Page
+// Contact Page
 app.get("/contact", (req, res)=>{
 	
-
-	// Populate packages (Author: Irada Shamilova)
+ 
+	// Populate Contacts (Author: Irada Shamilova)
 		var conn = mysql.createConnection({
 		host: "localhost",
 		user: "Wintech",
@@ -120,15 +137,13 @@ app.get("/contact", (req, res)=>{
 		conn.connect((err)=>{
 			if (err) throw err;
 			var sql = "SELECT * FROM agents";
-			//const packagesDb = '';
+
 			conn.query(sql, (err, agentsDb, fields)=>{
-			//	if (err) throw err;
-				// console.log(packagesDb);
+
 	
 				let contentAgents = '';
-	
+
 				// Loop through each element in the packages and append to content
-				// Note: I've attached url link to the image rather than as a separate link
 				agentsDb.forEach(function(agent){
 					
 					
@@ -150,61 +165,6 @@ app.get("/contact", (req, res)=>{
 		
 		
 	});
-
-// Contact Page population (Author: Karim Khan)
-app.get("/contact", (req, res)=>{
-    var conn = mysql.createConnection({
-        host: "localhost",
-        user: "Wintech",
-        password: "password",
-        database: "travelexpertsWT"
-    });
-    
-    conn.connect((err) => {
-        if (err) throw err;
-        var sql = "SELECT agencies.AgncyAddress, agencies.AgncyPhone, agents.AgtFirstName," 
-            + "agents.AgtLastName, agents.AgtBusPhone, agents.AgtEmail, agents.AgtPosition" 
-            + " FROM agencies JOIN agents ON agencies.AgencyId = agents.AgencyId"
-			+ " ORDER by agencies.AgncyAddress";
-				
-				console.log(sql)
-			
-        conn.query(sql, (err, result, fields) => {
-            if (err) throw err;
-            res.writeHead(200, {"Content-Type":"text/html"})
-            fs.readFile("contact.html", (err, data) => {
-                if (err) throw err;
-                res.render(data) 
-             // <table> tag --> <tr> create rows --> <td> create columns
-            res.render("<table border='1'>")
-            res.render("<tr>")
-            for (column of fields)
-            {
-                res.render("<th>" + column.name + "</th>"); 
-            }
-            res.render("</tr>")
-            for (agency of result)
-            {
-                res.render("<tr>")
-                var values = Object.values(agency);
-                for (i=0; i < values.length; i++)
-                {
-                    res.render("<td>" + values[i] + "</td>")
-                }
-                res.render("</tr>")
-            }
-            
-			res.render('contact', { pugContacts });
-
-            conn.end((err)=>{
-			if (err) throw err;
-		});
-            
-            });
-        });
-        
-    });
-});
 
 
 // Order Form (Author: Karim Khan)
@@ -279,10 +239,6 @@ app.post("/create_post", (req, res)=>{
 	res.redirect("/thanks");
 });	
 
-// 404 Page (Karim: Needs troublshooting!)
-// app.get("*", (req, res)=>{
-// 	res.sendFile(pagenotfound);
-// });
 
 // Irada's route to error page if page not found
 app.use((req,res,next)=>{
