@@ -339,7 +339,7 @@ a {
   font-size: 3em;
   /* font-weight: bold; */
   text-decoration: none;
-  padding: 7px;
+  padding: 10px;
   margin: auto;
   font-family: 'Zhi Mang Xing';
   text-decoration: none;
@@ -376,4 +376,17 @@ ul {
     -1px 1px 0 black,
       1px 1px 0 black;
 }
+
+.margin-top {
+  margin-top: 15;
+}
+
+.underlined {
+  text-decoration: underline;
+}
+
+.full-width{
+  grid-column: 1 / -1;
+}
+
 
