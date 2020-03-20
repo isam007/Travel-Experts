@@ -14,11 +14,13 @@ http://www.thesuburban.com/news/laval_news/get-lost-in-the-historical-beauty-of-
 
 ## Designed 404 Page 
 
-## Created back-end script for Order Post form
+## Created Back-end script for Order Post form to post data from the form in the browser to MySQL DB.
 
-## Created back-end script for Contact form
+## Created Back-end script for Contact form to post data from the form in the browser to MySQL DB.
 
-## Created back-end script to dynamically generate Agents and Agencies contact info from MySQL DB onto Contact Page.
+## Created Back-end script to dynamically generate Agents and Agencies contact info from MySQL DB onto Contact Page.
+
+## Converted Contact Page from HTML to PUG for dynamic generation of data from MySQL DB.
 
 
 # March 13 Irada Shamilova
@@ -34,6 +36,11 @@ http://www.thesuburban.com/news/laval_news/get-lost-in-the-historical-beauty-of-
   ## added images to packages
   ## added code to format dates on packages
   ## added html and css extensions and fixed the app.js file to shorten the code
+  ## changed most of the hard coded px sizes to view related, to add greater responsiveness. 
+  ## added new node js code that dynamically displays agents in the contact list
+  ## added date check, if start date is in the past, it will add new css style - red & bold - to that date
+  ## added button to the packages for order registration
+  ## unified the navbar style and added responsiveness to it
 
 # Mar. 17-19 Colin MacDonald
   ## Generation and submission of daily scrum reports

@@ -19,47 +19,87 @@ html(lang='en')
       div {
         margin-top: 5vh;
       }
+      .flex {
+        display: grid;
+        justify-content: center
+      }
+      form {
+        border: none;
+        max-width: 80ch;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        padding: 1em;
+      
+      }
+      h1 {
+        font-size: 2.5em;
+      }
   body
     // header containing company logo img, company name, nav bar
     header
-      .logo
-        img(src='pictures/teLogo.png', alt='company logo', height='150px')
-      nav.nav
+      nav
+        img.logo(src='pictures/teLogo.png', alt='MY logo')
         ul
           li
-            a(href='/contact') Contact
+            a.text-shadow(href='/') Home
           li
-            a(href='/packages') Packages
+            a.text-shadow(href='/packages') Packages
           li
-            a(href='/index') Home
-
-
-  // bonus forms
-  form(action='/create_post' method='POST')
-    h3 Contact us
-    label First Name 
-    input(type='text' name='CustFirstName' required='' placeholder='Required')
-    br
-    br
-    label Last Name 
-    input(type='text' name='CustLastName' required='' placeholder='Required')
-    br
-    br
-    label Email 
-    input(type='email' name='CustEmail' required='' placeholder='Required')
-    br
-    br
-    label Message 
-    textarea(name='message')  
-    br
-    br
-    label  Date of Birth 
-    input(type='date' name='DateOfBirth')
-    br
-    br
-    div
-      input(type='submit' name='submit' value='Submit')
-    main
+            a.text-shadow(href='/contact') Contact
+    section
+      br
+      h1.margin-top.underlined Travel Agents:
+      br
       #{pugContacts}
-footer#main-footer
-  p Copyright &copy; 2020 Travel Experts All Rights Reserved
+      br
+      h2 Contact Information
+      br
+      h3
+        | Travel Agent Main office
+        br
+        |             1301 16 Ave NW
+        br
+        |             Calgary, Alberta, CANADA
+        br
+        |             T2M 0L4
+      h3
+        p
+          | Tel: 403.284.7248
+          br
+          |   Toll-Free: 1.877.284.7248
+          br
+          |   Fax: 403.284.7112
+    br
+    br
+    aside.flex
+      // bonus forms
+      form(action='/create_post', method='POST')
+        h1.underlined Contact us
+        label First Name 
+        input(type='text', name='CustFirstName', required='', placeholder='Required')
+        br
+        br
+        label Last Name 
+        input(type='text', name='CustLastName', required='', placeholder='Required')
+        br
+        br
+        label Email 
+        input(type='email', name='CustEmail', required='', placeholder='Required')
+        br
+        br
+        label Message 
+        textarea(name='message')  
+        br
+        br
+        label  Date of Birth 
+        input(type='date', name='DateOfBirth')
+        br
+        br
+        div.center
+          input.order-button.full-width(type='submit', name='submit', value='Submit')
+    // Karim: Modified Copyright in footer, changed from "My website" to 2020 Travel Experts All Rights Reserved
+    footer#main-footer
+      p.ivory Copyright © 2020 Travel Experts All Rights Reserved
