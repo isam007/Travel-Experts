@@ -1,4 +1,4 @@
-/**authors Colin **/
+/**Author: Colin MacDonald **/
 /**global fonts, google fonts import**/
    @import url("https://fonts.googleapis.com/css?family=Libre+Baskerville|Merriweather|Zhi+Mang+Xing&display=swap");
 /* Reset */
@@ -46,13 +46,11 @@ body {
 /**header layout, w logo and nav tabs as flexbox elements, positioned with some manual rejig**/
 header {
   position: relative;
-  /* display: flex; */
   justify-content: space-between;
   width: 100vw;
   height: 15%;
   margin: 0;
   background-position: top;
-  /* background-color: #acdbdf; */
 }
 
 /** foooter, simple, solid bk with copyright**/ 
@@ -88,11 +86,7 @@ footer {
   justify-content: space-evenly;
   align-items: center;
 }
-      /**  cant quite get the images to responsivly resize
-      .responsive {
-          width: auto;
-          height: auto;
-        } **/
+
 .cell{
   margin: 5px;
   width: 330px;
@@ -103,9 +97,7 @@ footer {
   font-weight: lighter;
   text-align: center;
 }
-            /** can get the .cell to respond but associated image still static
-            @media only screen and (max-width: 800px) {.cell {width: 200px height: auto;}}**/
-/** registration page main styling (under construction), bk image, reg form, trip & date selector w submit button**/
+
 .addLabel{
   display: inline-flex;
   flex-direction: column;
