@@ -85,31 +85,29 @@ html(lang='en')
 
     br
     br
-    aside.flex
+    article
+      h1.underlined Contact us
       form(action='/create_post', method='POST')
-        h1.underlined Contact us
-        label First Name 
-        input(type='text', name='CustFirstName', required='', placeholder='Required')
-        br
-        br
-        label Last Name 
-        input(type='text', name='CustLastName', required='', placeholder='Required')
-        br
-        br
-        label Email 
-        input(type='email', name='CustEmail', required='', placeholder='Required')
-        br
-        br
-        label Message 
-        textarea(name='message')  
-        br
-        br
-        label  Date of Birth 
-        input(type='date', name='DateOfBirth')
-        br
-        br
-        div.center
-          input.order-button.full-width(type='submit', name='submit', value='Submit')
+        
+        label(for='CustFirstName')
+          | First Name 
+          span.red-color *
+        input#CustFirstName(type='text', name='CustFirstName', placeholder='Enter your first name here', required='')
+        
+        label(for='CustLastName')
+          | Last Name 
+          span.red-color *
+        input#CustLastName(type='text', name='CustLastName', placeholder='Enter your last name here', required='')
+        
+        label.error(for='CustEmail')
+          | Email Address 
+          span.red-color *
+        input#CustEmail(type='email', name='CustEmail', required='')
+          
+        label(for="message")
+          | Message 
+        textarea#message(name="message" placeholder="Enter your message")
+        input.full-width.button(type="submit" name="submit" value="Submit")
     
     footer#main-footer
-      p.ivory Copyright © 2020 Travel Experts All Rights Reserved
+      p.ivory Copyright © 2020. Travel Experts. All Rights Reserved

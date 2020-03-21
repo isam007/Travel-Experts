@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Colin MacDonald/Irada Shamilova -->
 <html lang = "en">
 <head>
     <meta charset="UTF-8">
@@ -23,80 +24,50 @@
     </ul>
   </nav>
 </header>
-<!--Customer Registration Forms, currently under construction W bckground image, name & email set as required w placeholder as reminder & format example, method=post-->
-    <div>
+    <!--Irada's customer order booking form. Completely redesigned the existing form to be more user friendly as per Instructor's feedback-->
+    <article>
+      <br>
+      <h2 class="center">Let's book your dream trip now!</h2>
+
       <form action="/post_form" target="" method="post">
-        <div class="addLabel">
-          <label>First Name*</label><br>
-            <input type="text" name="CustFirstName" required placeholder="Required"><br>
-          <label>Last Name*</label><br>
-            <input type="text" name="CustLastName" required placeholder="Required"><br>
-          <br>
-          <label>E-mail*</label><br>
-            <input type="email" name="CustEmail" required placeholder="Required"><br>
-          <br>
-          <label>Street Address</label><br>
-            <input type="text" name="CustAddress"><br>
-          <label>City</label><br>
-            <input type="text" name="CustCity"><br>
-          <label>Postal Code</label><br>
-            <input type="text" name="CustPostal" pattern="^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$" placeholder="X1X-1X1"><br>
-          <label>Province</label><br>
-            <select name="CustProv">
-              <option value="BC">BC</option>
-              <option value="AB">AB</option>
-              <option value="SK">SK</option>
-              <option value="MN">MN</option>
-              <option value="QC">QC</option>
-              <option value="NB">NB</option>
-              <option value="NS">NS</option>
-              <option value="PE">PE</option>
-              <option value="NL">NL</option>
-              <option value="YT">YT</option>
-              <option value="NT">NT</option>
-              <option value="NU">NU</option>
-            </select>
-            <label>Country</label><br>
-            <select name="CustCountry">
-              <option value="CAN">Canada</option>
-              <option value="CAN">United States</option>
-            </select>
-          <br>
-          <br>
-          <label>Home Phone</label><br>
-            <input type="tel" name="CustHomePhone"><br>
-          <label>Business Phone</label><br>
-            <input type="tel" name="CustBusPhone"><br>
-          <label>Agent ID </label>
-            <input type = "text" name = "AgentId" placeholder="Enter your Agent ID" required>
-          <br>
-          <label>Package Selection</label><br>
-            <select name = "select">
-              <option value="trip1">Package One</option>
-              <option value="trip2">Package Two</option>
-              <option value="trip3">Package Three</option>
-              <option value="trip4">Package Four</option>
-              <option value="general">General Questions</option>
-            </select>
-          <br>
-          <br>
-          <label>Trip Date</label>
-          <br>
-            <input type="date" name="Trip Date">
-          <br>
-            <label>Message</label><br>
-              <textarea name="message"></textarea>
-          <br>
-          <br>
-            <input class="order-button" type="Submit" name="Submit" value="Submit">
-          <br>
-        </div>
+        <label for="CustFirstName">First Name <span class="red-color">*</span></label>
+        <input id="CustFirstName" type="text" name="CustFirstName" placeholder="Enter your first name here" required="">
+        
+        <label for="CustLastName">Last Name <span class="red-color">*</span></label>
+        <input id="CustLastName" type="text" name="CustLastName" placeholder="Enter your last name here" required="">
+        
+        <label for="CustEmail">Email Address <span class="red-color">*</span></label>
+        <input id="CustEmail" type="email" name="CustEmail" required="">
+        
+        <label for="CustAddress">Address</label>
+        <input id="CustAddress" type="text" name="CustAddress">
+        
+        <label for="CustCity">City</label>
+        <input id="CustCity" type="text" name="CustCity">
+        
+        <label for="CustProv">Province</label>
+        <input id="CustProv" type="text" name="CustProv">
+
+        <label for="CustCountry">Country</label>
+        <input id="CustCountry" type="text" name="CustCountry">
+        
+        <!-- Pattern match validation for Postal code -->
+        <label for="CustPostal">Postal code <span class="red-color">*</span></label>
+        <input type="text" name="CustPostal" id="CustPostal" pattern="^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$" title="example T3B5Y3" required>
+          
+        <input type="checkbox" name="agreed" id="agreed" value="agreed" required>
+        <label for="agreed">I agree to the terms and conditions <span class="red-color">*</span></label>
+        
+    
+        <button class="full-width button" type="Submit" name="Submit" value="Submit">Submit</button>
+
+        <p class = "center"><span class="red-color">* indicates required field</span></p>
       </form>
-    </div>
+    </article>
 <!--footer with copyright-->
 <!-- Karim: Modified Copyright in footer, changed from "My website" to 2020 Travel Experts All Rights Reserved -->
     <footer id="main-footer">
-      <h3>Copyright &copy; 2020, Travel Experts All Rights Reserved</h3>
+      <h3>Copyright &copy; 2020. Travel Experts. All Rights Reserved</h3>
     </footer>
 </body>
 </html>

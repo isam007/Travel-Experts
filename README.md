@@ -44,6 +44,8 @@ http://www.thesuburban.com/news/laval_news/get-lost-in-the-historical-beauty-of-
   ## added button to the packages for order registration
   ## unified the navbar style and added responsiveness to it
   ## fixed weather API
+  ## redesigned all forms in the project to be dynamic and user friendly as per instructor's feedback
+  ## added personalised greeting to Thank you page after form submission
 
 # Mar. 17-19 Colin MacDonald
   ## Generation and submission of daily scrum reports

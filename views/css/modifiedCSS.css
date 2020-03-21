@@ -25,8 +25,9 @@ h3{
   }
 p{
   font-family: 'Merriweather', serif;
-  font-size: 20px;
+  font-size: 1vw;
   font-weight: normal;
+  padding: 1px;
   }
 h4{        
   font-family: 'libre Baskerville', serif;
