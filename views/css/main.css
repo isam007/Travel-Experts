@@ -79,8 +79,9 @@ main {
 
 #main-footer{
   text-align: center;
-  font-size: 18px;
-  margin-top: 10em;
+  /* font-size: 18px; */
+  margin-top: 23vh;
+  
 }
 
 footer {
@@ -214,7 +215,7 @@ p{
 }
 .locationText {
   color: #f2f2f2;
-  font-size: 30px;
+  font-size: 2vw;
   padding: 8px 12px;
   position: absolute;
   bottom: 60%;
@@ -286,7 +287,7 @@ p{
   margin: 3px;
 }
 
-/* Styles for packages added by Irada*/
+/* Styles added by Irada*/
 
 .header-blue{
   color: rgb(32, 117, 214);
@@ -365,9 +366,7 @@ ul {
   padding-top: 0em;
   /* margin: auto; */
   }
-/* nav {
-  width: 100vw;
-} */
+
 
 .text-shadow {
   text-shadow:
@@ -387,6 +386,126 @@ ul {
 
 .full-width{
   grid-column: 1 / -1;
+}
+
+
+.flex {
+  display: flex;
+}
+
+/* Block layout for the form */
+form {
+  max-width: 80ch;
+  margin: auto;
+  display: grid;
+  grid-template-columns: max-content 1 fr;
+  grid-gap: 0.5em 2em;
+  margin-top: 2em;
+  padding-top: 1em;
+  border: none;
+  justify-content: center;
+  text-align: left;
+  padding: 1em;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+input, label {
+  display:block;
+  margin: 0.5em;
+  font-weight:bold;
+  }
+  
+  input{
+  margin-bottom:2em;
+  }
+         
+  
+  /* Media querry: Mobile First */
+  
+  
+  @media screen and (min-width: 600px) {
+    form {
+      max-width: 80ch;
+      margin: auto;
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      grid-gap: 0.5em 2em;
+      margin-top: 2em;
+      padding-top: 1em;
+    }
+  }
+  
+  @media screen and (min-width: 800px) {
+    form {
+      max-width: 80ch;
+      margin: auto;
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      grid-gap: 0.5em 2em;
+      margin-top: 2em;
+      padding-top: 1em;
+    } 
+  }
+
+  /* Other Form formats*/
+
+.full-width{
+  grid-column: 1 / -1;
+}
+
+input {
+  border-bottom: 2px solid lightgrey;
+  border-left: 2px solid lightgrey;
+  border-top: 2px solid darkgray;
+  border-right: 2px solid darkgray;
+  box-shadow: -1px 0px 0px rgba(0,0,0,0.06);
+}
+
+.button{
+  border-bottom: 2px solid rgb(67, 104, 146);
+  border-left: 2px solid rgb(67, 104, 146);
+  border-top: 2px solid lightblue;
+  border-right: 2px solid lightblue;
+  box-shadow: -1px 0px 0px rgba(0,0,0,0.06);
+  border-radius: 8px;
+  height:2.5em;
+  background-color: rgb(85, 135, 182);
+  color: white;
+  cursor: pointer;
+}
+
+.shadow3{
+  border-bottom: 2px solid lightblue;
+  border-left: 2px solid lightblue;
+  border-top: 2px solid lightblue;
+  border-right: 2px solid lightblue;
+  box-shadow: -1px 0px 0px rgba(0,0,0,0.06);
+  border-radius: 8px; 
+}
+
+input:hover {
+  background-color: rgb(197, 229, 241);
+}
+
+input:focus {
+  background-color: rgb(197, 229, 241);
+}
+
+input:invalid {
+  border: 1px dotted red;
+  border-bottom: 2px solid rgb(245, 183, 183);
+  border-left: 2px solid rgb(245, 183, 183);
+  border-top: 2px solid red;
+  border-right: 2px solid red;
+}
+
+.blue-color {
+  color: #23477b;
+}
+
+.red-color {
+  color: red;
 }
 
 

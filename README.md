@@ -1,9 +1,8 @@
-# Karim Khan: March 17 - March 20
+# March 17-20 Karim Khan 
 
 ## Updated Images in Slider on Home Page (Front-end)
 ## Lake Louise, Banff, AB
 https://www.lonelyplanet.com/canada/alberta/banff-and-jasper-national-parks
-
 
 ## Great Wall of China
 https://en.wikipedia.org/wiki/Great_Wall_of_China#/media/File:The_Great_Wall_of_China_at_Jinshanling-edit.jpg
@@ -44,6 +43,8 @@ http://www.thesuburban.com/news/laval_news/get-lost-in-the-historical-beauty-of-
   ## added button to the packages for order registration
   ## unified the navbar style and added responsiveness to it
   ## fixed weather API
+  ## redesigned all forms in the project to be dynamic and user friendly as per instructor's feedback
+  ## added personalised greeting to Thank you page after form submission
 
 # Mar. 17-19 Colin MacDonald
   ## Generation and submission of daily scrum reports

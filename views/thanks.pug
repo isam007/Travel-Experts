@@ -1,0 +1,35 @@
+doctype html
+// Author Irada Shamilova
+html(lang='en')
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		meta(http-equiv='X-UA-Compatible', content='ie=edge')
+		meta(name='description', content='Destinations Travel Experts')
+		meta(name='keywords', content='travel, adventure, lifestyle, expirience, local, culture')
+		link(rel='stylesheet', type='text/css', href='css/main.css')
+		link(rel='stylesheet', type='text/css', href='css/modifiedCSS.css')
+		title Destinations Travel Experts Registration Page
+		style.
+			header {
+			height: 100vh;
+			background-size: contain;
+			background-size: cover;
+			background-position: center;
+			}
+	body
+		// header containing company logo img, company name, nav bar
+		header
+			nav
+				img.logo(src='pictures/teLogo.png', alt='MY logo')
+				ul
+					li
+						a.text-shadow(href='/') Home
+					li
+						a.text-shadow(href='/packages') Packages
+					li
+						a.text-shadow(href='/contact') Contact
+			.hero-text
+				h1 Thank you, #{pugCustomer}!
+				h2 #{pugMessage}.
+
