@@ -1,9 +1,8 @@
-# Karim Khan: March 17 - March 20
+# March 17 - March 20 Karim Khan 
 
 ## Updated Images in Slider on Home Page (Front-end)
 ## Lake Louise, Banff, AB
 https://www.lonelyplanet.com/canada/alberta/banff-and-jasper-national-parks
-
 
 ## Great Wall of China
 https://en.wikipedia.org/wiki/Great_Wall_of_China#/media/File:The_Great_Wall_of_China_at_Jinshanling-edit.jpg
