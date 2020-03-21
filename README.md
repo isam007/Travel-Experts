@@ -1,4 +1,4 @@
-# March 17 - March 20 Karim Khan 
+# March 17-20 Karim Khan 
 
 ## Updated Images in Slider on Home Page (Front-end)
 ## Lake Louise, Banff, AB
